@@ -21,8 +21,19 @@ class Pencere(QtWidgets.QWidget):
         v_box.addWidget(self.yazi_alani)
         v_box.addStretch()
 
-        self.setLayout(v_box)
+        h_box=QtWidgets.QVBoxLayout()
+        h_box.addStretch()
+        h_box.addLayout(v_box)
+        h_box.addStretch()
+
+        self.setLayout(h_box)
+        self.button.clicked.connect(self.click)
         self.show()
+
+    def click(self):
+        self.say+=1
+        self.yazi_alani.setText("Bana "+str(self.say)+"kere tiklandir")
+
 
 app=QtWidgets.QApplication(sys.argv)
 pencere1=Pencere()
