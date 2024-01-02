@@ -35,8 +35,6 @@ class Notepad(QWidget):
         self.ac.clicked.connect(self.dosya_ac)
         self.kaydet.clicked.connect(self.dosya_kaydet)
 
-        self.show()
-
 
     def yaziyi_temizle(self):
         self.yazi_alani.clear()
